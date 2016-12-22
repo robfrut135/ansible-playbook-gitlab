@@ -1,0 +1,4 @@
+.idea
+ansible-playbook-gitlab.iml
+*.retry
+hosts
