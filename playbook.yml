@@ -4,4 +4,13 @@
   become_user: root
 
   roles:
-    - { role: ansible-role-gitlab }
+    - {
+        role: ansible-role-gitlab,
+        gitlab_external_url: "https://YOUR_IP_ADDRESS/",
+        gitlab_edition: "gitlab-ce",
+        gitlab_redirect_http_to_https: "true",
+        gitlab_ssl_certificate: "/etc/gitlab/ssl/gitlab.crt",
+        gitlab_ssl_certificate_key: "/etc/gitlab/ssl/gitlab.key",
+        gitlab_create_self_signed_cert: "true",
+        gitlab_self_signed_cert_subj: "/C=ES/ST=Madrid/L=Madrid/O=IT/CN=YOUR_IP_ADDRESS"
+    }
